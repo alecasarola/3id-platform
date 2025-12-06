@@ -261,7 +261,7 @@ app.get("/api", (req, res) => {
   res.json({
     name: "DID Data Marketplace API",
     version: "1.0.0",
-    documentation: "https://github.com/your-repo/did-data-mvp",
+    documentation: "https://github.com/alecasarola/3id-platform.git/did-data-mvp",
     endpoints: {
       auth: {
         challenge: "POST /api/auth/challenge",
@@ -1164,7 +1164,7 @@ cat > /var/www/did-mvp/client/index.html << 'EOF'
                 <a href="#" class="footer-link" onclick="showSystemInfo()">
                     <i class="fas fa-info-circle"></i> Info Sistema
                 </a>
-                <a href="https://github.com/your-repo/did-data-mvp" class="footer-link" target="_blank">
+                <a href="https://github.com/alecasarola/3id-platform.git/did-data-mvp" class="footer-link" target="_blank">
                     <i class="fab fa-github"></i> GitHub
                 </a>
                 <a href="/api/health" class="footer-link" target="_blank">
@@ -1872,7 +1872,7 @@ server {
         proxy_busy_buffers_size 256k;
         
         # Keepalive
-        proxy_keepalive_timeout 30;
+        keepalive_timeout 30;
         proxy_http_version 1.1;
         
         # Security
