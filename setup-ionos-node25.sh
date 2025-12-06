@@ -1791,6 +1791,10 @@ server {
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.infura.io https://*.web3.storage;" always;
 
+    # Timeouts per keepalive
+    keepalive_timeout 30;
+    keepalive_requests 100;
+
     # Gzip Compression
     gzip on;
     gzip_vary on;
@@ -1865,9 +1869,6 @@ server {
         proxy_buffer_size 128k;
         proxy_buffers 4 256k;
         proxy_busy_buffers_size 256k;
-        
-        # Keepalive
-        keepalive_timeout 30;
         
         # Security
         proxy_hide_header X-Powered-By;
