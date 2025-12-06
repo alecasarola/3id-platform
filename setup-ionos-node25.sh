@@ -1823,11 +1823,6 @@ server {
         text/x-component
         text/x-cross-domain-policy;
 
-    # Brotli Compression (if available)
-    # brotli on;
-    # brotli_comp_level 6;
-    # brotli_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
     # Frontend - SPA
     location / {
         try_files \$uri \$uri/ /index.html;
@@ -1872,12 +1867,10 @@ server {
         proxy_busy_buffers_size 256k;
         
         # Keepalive
-        keepalive_timeout 30;
-        proxy_http_version 1.1;
+        proxy_keepalive_timeout 30;
         
         # Security
         proxy_hide_header X-Powered-By;
-        proxy_set_header X-Forwarded-Proto \$scheme;
     }
 
     # Health Check (public)
