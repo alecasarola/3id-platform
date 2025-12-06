@@ -1867,7 +1867,7 @@ server {
         proxy_busy_buffers_size 256k;
         
         # Keepalive
-        proxy_keepalive_timeout 30;
+        keepalive_timeout 30;
         
         # Security
         proxy_hide_header X-Powered-By;
