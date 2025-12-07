@@ -455,7 +455,7 @@ EOF
 chmod 600 /var/www/did-mvp/backend/.env
 
 # Crea ecosystem.config.js per PM2
-cat > /var/www/did-mvp/backend/ecosystem.config.js << 'EOF'
+cat > /var/www/did-mvp/backend/ecosystem.config.cjs << 'EOF'
 module.exports = {
   apps: [{
     name: "did-mvp-backend",
