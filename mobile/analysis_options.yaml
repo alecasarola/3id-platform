@@ -1,0 +1,26 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - custom_lint          # activates riverpod_lint rules
+  errors:
+    missing_required_param: error
+    missing_return: error
+  exclude:
+    - '**/*.g.dart'        # build_runner output
+    - '**/*.freezed.dart'
+
+linter:
+  rules:
+    # Style
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_final_locals: true
+    prefer_single_quotes: true
+    always_use_package_imports: true  # enforce absolute imports
+
+    # Safety
+    avoid_print: true
+    unawaited_futures: true
+    cancel_subscriptions: true
+    avoid_dynamic_calls: true
