@@ -1,0 +1,27 @@
+# Dart / Flutter tooling
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Environment secrets — NEVER commit
+.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# iOS native dependencies
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/flutter_export_environment.sh
+
+# Android local config
+android/.gradle/
+android/local.properties
+android/key.properties

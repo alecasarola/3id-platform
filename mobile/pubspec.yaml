@@ -1,0 +1,56 @@
+name: healthcare_marketplace
+description: >
+  Two-sided marketplace connecting nurses (infermieri) to healthcare
+  facilities (strutture) for shift coverage. Flutter + Supabase.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  # Riverpod chosen over Bloc:
+  #   - minimal boilerplate (no Events/States classes per feature)
+  #   - built-in DI, ideal for injecting the Supabase client
+  #   - AsyncValue<T> natively handles loading/error/data states
+  #   - compile-time provider safety (no BuildContext lookup)
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # Backend — Supabase EU region (configured in Step 2)
+  supabase_flutter: ^2.5.3
+
+  # Secure environment variables — API keys never hard-coded
+  flutter_dotenv: ^5.1.0
+
+  # Immutable value objects / JSON serialisation
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation
+  # Run: dart run build_runner build --delete-conflicting-outputs
+  build_runner: ^2.4.11
+  riverpod_generator: ^2.4.3
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
+
+  # Linting
+  flutter_lints: ^4.0.0
+  custom_lint: ^0.6.5        # enables riverpod_lint plugin
+  riverpod_lint: ^2.3.13
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
